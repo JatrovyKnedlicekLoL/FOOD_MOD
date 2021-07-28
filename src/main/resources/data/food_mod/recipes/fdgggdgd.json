@@ -2,14 +2,15 @@
   "group": "food_mod",
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "01"
+    "0",
+    "1"
   ],
   "key": {
     "0": {
-      "item": "food_mod:pancake"
+      "item": "food_mod:blueberryjam"
     },
     "1": {
-      "item": "food_mod:blueberryjam"
+      "item": "food_mod:pancake"
     }
   },
   "result": {

@@ -732,6 +732,84 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "rohlikwithblueberryjam"
+    },
+    {
+      "name": "RohlikwithraspberryjamFoodEaten",
+      "type": "procedure",
+      "sortid": 62,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rohlikwithraspberryjam_food_eaten",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Rohlikwithraspberryjam",
+      "type": "food",
+      "sortid": 62,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rohlikwithraspberryjam"
+    },
+    {
+      "name": "RohlikwithblackberryjamFoodEaten",
+      "type": "procedure",
+      "sortid": 63,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rohlikwithblackberryjam_food_eaten",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Rohlikwithblackberryjam",
+      "type": "food",
+      "sortid": 63,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rohlikwithblackberryjam"
+    },
+    {
+      "name": "RohlikwithstrawberryjamFoodEaten",
+      "type": "procedure",
+      "sortid": 64,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rohlikwithstrawberryjam_food_eaten",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Rohlikwithstrawberryjam",
+      "type": "food",
+      "sortid": 64,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rohlikwithstrawberryjam"
     }
   ],
   "variable_elements": [],
@@ -742,11 +820,14 @@
       "item.food_mod.tomato": "Tomato",
       "item.food_mod.rohlik": "Rohlík",
       "item.food_mod.pancakewithblackberryjam": "Pancake with blackberry jam",
+      "item.food_mod.rohlikwithstrawberryjam": "Rohlík with strawberry jam",
       "item.food_mod.pear": "Pear",
+      "item.food_mod.rohlikwithraspberryjam": "Rohlík with raspberry jam",
       "item.food_mod.strawberry": "Strawberry",
       "block.food_mod.blueberrybush": "Blueberry bush",
       "item.food_mod.blackberry": "Blackberry",
       "item.food_mod.strawberryjam": "Strawberry jam",
+      "item.food_mod.rohlikwithblackberryjam": "Rohlík with blackberry jam",
       "item.food_mod.banana": "Banana",
       "item.food_mod.houskawithblackberryjam": "Houskawithblackberryjam",
       "item.food_mod.pancake": "Pancake",

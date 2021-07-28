@@ -13,7 +13,7 @@ import java.util.Map;
 @FoodModModElements.ModElement.Tag
 public class RohlikwithstrawberryjamFoodEatenProcedure extends FoodModModElements.ModElement {
 	public RohlikwithstrawberryjamFoodEatenProcedure(FoodModModElements instance) {
-		super(instance, 66);
+		super(instance, 64);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -24,6 +24,6 @@ public class RohlikwithstrawberryjamFoodEatenProcedure extends FoodModModElement
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		if (entity instanceof LivingEntity)
-			((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.HASTE, (int) 60, (int) 1));
+			((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.HASTE, (int) 2000, (int) 1));
 	}
 }
