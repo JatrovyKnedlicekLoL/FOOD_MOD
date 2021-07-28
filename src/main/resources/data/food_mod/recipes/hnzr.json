@@ -1,0 +1,20 @@
+{
+  "group": "food_mod",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0",
+    "1"
+  ],
+  "key": {
+    "0": {
+      "item": "food_mod:raspberryjam"
+    },
+    "1": {
+      "item": "food_mod:baget"
+    }
+  },
+  "result": {
+    "item": "food_mod:bagetwithraspberryjam",
+    "count": 1
+  }
+}

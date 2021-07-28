@@ -11,19 +11,19 @@ import net.mcreator.foodmod.FoodModMod;
 import java.util.Map;
 
 @FoodModModElements.ModElement.Tag
-public class PancakewithblackberryjamFoodEatenProcedure extends FoodModModElements.ModElement {
-	public PancakewithblackberryjamFoodEatenProcedure(FoodModModElements instance) {
-		super(instance, 30);
+public class BreadwithraspberryjamFoodEatenProcedure extends FoodModModElements.ModElement {
+	public BreadwithraspberryjamFoodEatenProcedure(FoodModModElements instance) {
+		super(instance, 68);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				FoodModMod.LOGGER.warn("Failed to load dependency entity for procedure PancakewithblackberryjamFoodEaten!");
+				FoodModMod.LOGGER.warn("Failed to load dependency entity for procedure BreadwithraspberryjamFoodEaten!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		if (entity instanceof LivingEntity)
-			((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.STRENGTH, (int) 2000, (int) 2));
+			((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.REGENERATION, (int) 2000, (int) 1));
 	}
 }
