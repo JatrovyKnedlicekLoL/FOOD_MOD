@@ -30,7 +30,7 @@
   "item.food_mod.flour": "Flour",
   "item.food_mod.bagetwithblueberryjam": "Baget with blueberry jam",
   "entity.food_mod.opicka": "Opice",
-  "item.food_mod.knedlik": "Jatrový knedlíček",
+  "item.food_mod.knedlik": "Jatrový knedlíèek",
   "item.food_mod.pancakewithblueberryjam": "Pancake with blueberry jam",
   "item.food_mod.orange": "Orange",
   "item.food_mod.blueberryjam": "Blueberry jam",
@@ -38,5 +38,6 @@
   "item.food_mod.baget": "Baget",
   "item.food_mod.houskawithblueberryjam": "Houska with blueberry jam",
   "item.food_mod.opicka_spawn_egg": "Opice Spawn Egg",
-  "entity.food_mod.zzdenek": "Zzdenek"
+  "entity.food_mod.zzdenek": "Zzdenek",
+  "item.food_mod.rohlikwithblueberryjam": "Rohlík with blueberry jam"
 }

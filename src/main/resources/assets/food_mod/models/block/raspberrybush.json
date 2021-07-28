@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "food_mod:blocks/okoljguligh",
+    "up": "food_mod:blocks/okoljguligh",
+    "north": "food_mod:blocks/okoljguligh",
+    "east": "food_mod:blocks/okoljguligh",
+    "south": "food_mod:blocks/okoljguligh",
+    "west": "food_mod:blocks/okoljguligh",
+    "particle": "food_mod:blocks/okoljguligh"
+  }
+}
