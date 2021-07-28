@@ -173,6 +173,15 @@
       "registry_name": "foodbiom"
     },
     {
+      "name": "Blueberrybush",
+      "type": "plant",
+      "sortid": 61,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "blueberrybush"
+    },
+    {
       "name": "Flour",
       "type": "item",
       "sortid": 22,
@@ -699,13 +708,13 @@
       "registry_name": "bagetwithstrawberryjam"
     },
     {
-      "name": "Blueberrybush",
+      "name": "Blackberrybush",
       "type": "plant",
-      "sortid": 61,
+      "sortid": 63,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "blueberrybush"
+      "registry_name": "blackberrybush"
     },
     {
       "name": "Strawberrybush",
@@ -717,13 +726,30 @@
       "registry_name": "strawberrybush"
     },
     {
-      "name": "Blackberrybush",
-      "type": "plant",
-      "sortid": 63,
+      "name": "Rohlikwithblueberryjam",
+      "type": "food",
+      "sortid": 61,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "blackberrybush"
+      "registry_name": "rohlikwithblueberryjam"
+    },
+    {
+      "name": "RohlikwithblueberryjamFoodEaten",
+      "type": "procedure",
+      "sortid": 61,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rohlikwithblueberryjam_food_eaten",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -733,7 +759,6 @@
       "block.food_mod.rasberrybush": "Rasberry bush",
       "item.food_mod.tomato": "Tomato",
       "item.food_mod.rohlik": "Rohlík",
-      "block.food_mod.blackberrybush": "Blackberry bush",
       "item.food_mod.pancakewithblackberryjam": "Pancake with blackberry jam",
       "item.food_mod.pear": "Pear",
       "item.food_mod.strawberry": "Strawberry",
@@ -763,7 +788,6 @@
       "item.food_mod.bagetwithblueberryjam": "Baget with blueberry jam",
       "entity.food_mod.opicka": "Opice",
       "item.food_mod.knedlik": "Jatrový knedlíèek",
-      "block.food_mod.strawberrybush": "Strawberry bush",
       "item.food_mod.pancakewithblueberryjam": "Pancake with blueberry jam",
       "item.food_mod.orange": "Orange",
       "item.food_mod.blueberryjam": "Blueberry jam",
@@ -771,7 +795,8 @@
       "item.food_mod.baget": "Baget",
       "item.food_mod.houskawithblueberryjam": "Houska with blueberry jam",
       "item.food_mod.opicka_spawn_egg": "Opice Spawn Egg",
-      "entity.food_mod.zzdenek": "Zdenìk Pohlerich"
+      "entity.food_mod.zzdenek": "Zdenìk Pohlerich",
+      "item.food_mod.rohlikwithblueberryjam": "Rohlík with blueberry jam"
     }
   },
   "foldersRoot": {

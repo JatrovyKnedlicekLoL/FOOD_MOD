@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "food_mod:blocks/bananaleave",
+    "up": "food_mod:blocks/bananaleave",
+    "north": "food_mod:blocks/bananaleave",
+    "east": "food_mod:blocks/bananaleave",
+    "south": "food_mod:blocks/bananaleave",
+    "west": "food_mod:blocks/bananaleave",
+    "particle": "food_mod:blocks/bananaleave"
+  }
+}
