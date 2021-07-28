@@ -1,0 +1,42 @@
+{
+  "group": "food_mod",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "food_mod:blackberry"
+    },
+    "1": {
+      "item": "food_mod:blackberry"
+    },
+    "2": {
+      "item": "food_mod:blackberry"
+    },
+    "3": {
+      "item": "food_mod:blackberry"
+    },
+    "4": {
+      "item": "food_mod:blackberry"
+    },
+    "5": {
+      "item": "food_mod:blackberry"
+    },
+    "6": {
+      "item": "food_mod:blackberry"
+    },
+    "7": {
+      "item": "food_mod:blackberry"
+    },
+    "8": {
+      "item": "food_mod:blackberry"
+    }
+  },
+  "result": {
+    "item": "food_mod:blackberryjam",
+    "count": 1
+  }
+}

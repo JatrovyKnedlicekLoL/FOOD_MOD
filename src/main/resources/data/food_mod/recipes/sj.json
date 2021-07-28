@@ -1,0 +1,42 @@
+{
+  "group": "food_mod",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "food_mod:strawberry"
+    },
+    "1": {
+      "item": "food_mod:strawberry"
+    },
+    "2": {
+      "item": "food_mod:strawberry"
+    },
+    "3": {
+      "item": "food_mod:strawberry"
+    },
+    "4": {
+      "item": "food_mod:strawberry"
+    },
+    "5": {
+      "item": "food_mod:strawberry"
+    },
+    "6": {
+      "item": "food_mod:strawberry"
+    },
+    "7": {
+      "item": "food_mod:strawberry"
+    },
+    "8": {
+      "item": "food_mod:strawberry"
+    }
+  },
+  "result": {
+    "item": "food_mod:strawberryjam",
+    "count": 1
+  }
+}

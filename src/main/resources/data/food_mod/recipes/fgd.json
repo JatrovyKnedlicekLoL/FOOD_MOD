@@ -1,0 +1,19 @@
+{
+  "group": "food_mod",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "01"
+  ],
+  "key": {
+    "0": {
+      "item": "food_mod:pancake"
+    },
+    "1": {
+      "item": "food_mod:strawberryjam"
+    }
+  },
+  "result": {
+    "item": "food_mod:pancakewithstrawberryjam",
+    "count": 1
+  }
+}

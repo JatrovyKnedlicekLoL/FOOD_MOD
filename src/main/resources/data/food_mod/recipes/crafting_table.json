@@ -1,0 +1,16 @@
+{
+  "group": "food_mod",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:wheat"
+    },
+    {
+      "item": "minecraft:wheat"
+    }
+  ],
+  "result": {
+    "item": "food_mod:rohlik",
+    "count": 1
+  }
+}

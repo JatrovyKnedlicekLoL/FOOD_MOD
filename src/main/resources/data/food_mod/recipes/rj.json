@@ -1,0 +1,42 @@
+{
+  "group": "food_mod",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "food_mod:raspberry"
+    },
+    "1": {
+      "item": "food_mod:raspberry"
+    },
+    "2": {
+      "item": "food_mod:raspberry"
+    },
+    "3": {
+      "item": "food_mod:raspberry"
+    },
+    "4": {
+      "item": "food_mod:raspberry"
+    },
+    "5": {
+      "item": "food_mod:raspberry"
+    },
+    "6": {
+      "item": "food_mod:raspberry"
+    },
+    "7": {
+      "item": "food_mod:raspberry"
+    },
+    "8": {
+      "item": "food_mod:raspberry"
+    }
+  },
+  "result": {
+    "item": "food_mod:raspberryjam",
+    "count": 1
+  }
+}
