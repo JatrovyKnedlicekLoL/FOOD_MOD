@@ -750,6 +750,84 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "strawberrybush"
+    },
+    {
+      "name": "RohlikwithraspberryjamFoodEaten",
+      "type": "procedure",
+      "sortid": 64,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rohlikwithraspberryjam_food_eaten",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Rohlikwithraspberryjam",
+      "type": "food",
+      "sortid": 64,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rohlikwithraspberryjam"
+    },
+    {
+      "name": "RohlikwithblackberryjamFoodEaten",
+      "type": "procedure",
+      "sortid": 65,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rohlikwithblackberryjam_food_eaten",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Rohlikwithblackberryjam",
+      "type": "food",
+      "sortid": 65,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rohlikwithblackberryjam"
+    },
+    {
+      "name": "RohlikwithstrawberryjamFoodEaten",
+      "type": "procedure",
+      "sortid": 66,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rohlikwithstrawberryjam_food_eaten",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Rohlikwithstrawberryjam",
+      "type": "food",
+      "sortid": 66,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rohlikwithstrawberryjam"
     }
   ],
   "variable_elements": [],
@@ -759,10 +837,11 @@
       "block.food_mod.rasberrybush": "Rasberry bush",
       "item.food_mod.tomato": "Tomato",
       "item.food_mod.rohlik": "Rohlík",
+      "block.food_mod.blackberrybush": "Blackberry bush",
       "item.food_mod.pancakewithblackberryjam": "Pancake with blackberry jam",
       "item.food_mod.rohlikwithstrawberryjam": "Rohlík with strawberry jam",
       "item.food_mod.pear": "Pear",
-      "item.food_mod.rohlikwithraspberryjam": "Rohlík with raspberry jam",
+      "item.food_mod.rohlikwithraspberryjam": "Rohlíkwithraspberryjam",
       "item.food_mod.strawberry": "Strawberry",
       "block.food_mod.blueberrybush": "Blueberry bush",
       "item.food_mod.blackberry": "Blackberry",
@@ -781,7 +860,7 @@
       "item.food_mod.raspberry": "Raspberry",
       "item.food_mod.raspberryjam": "Raspberry jam",
       "item.food_mod.blackberryjam": "Blackberry jam",
-      "item.food_mod.zzdenek_spawn_egg": "Zzdenek Spawn Egg",
+      "item.food_mod.zzdenek_spawn_egg": "Zdenìk Pohlerich Spawn Egg",
       "block.food_mod.raspberrybush": "Raspberry bush",
       "item.food_mod.houskawithraspberryjam": "Houska with raspberry jam",
       "key.food_mod.creative": "Creative",
@@ -791,6 +870,7 @@
       "item.food_mod.bagetwithblueberryjam": "Baget with blueberry jam",
       "entity.food_mod.opicka": "Opice",
       "item.food_mod.knedlik": "Jatrový knedlíèek",
+      "block.food_mod.strawberrybush": "Strawberry bush",
       "item.food_mod.pancakewithblueberryjam": "Pancake with blueberry jam",
       "item.food_mod.orange": "Orange",
       "item.food_mod.blueberryjam": "Blueberry jam",
@@ -798,7 +878,7 @@
       "item.food_mod.baget": "Baget",
       "item.food_mod.houskawithblueberryjam": "Houska with blueberry jam",
       "item.food_mod.opicka_spawn_egg": "Opice Spawn Egg",
-      "entity.food_mod.zzdenek": "Zzdenek",
+      "entity.food_mod.zzdenek": "Zdenìk Pohlerich",
       "item.food_mod.rohlikwithblueberryjam": "Rohlík with blueberry jam"
     }
   },

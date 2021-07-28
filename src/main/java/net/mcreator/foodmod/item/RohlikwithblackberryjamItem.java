@@ -23,7 +23,7 @@ public class RohlikwithblackberryjamItem extends FoodModModElements.ModElement {
 	@ObjectHolder("food_mod:rohlikwithblackberryjam")
 	public static final Item block = null;
 	public RohlikwithblackberryjamItem(FoodModModElements instance) {
-		super(instance, 63);
+		super(instance, 65);
 	}
 
 	@Override
