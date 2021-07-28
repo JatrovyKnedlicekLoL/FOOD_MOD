@@ -3,43 +3,44 @@ package net.mcreator.foodmod.block;
 
 import net.minecraftforge.registries.ObjectHolder;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.common.PlantType;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.api.distmarker.Dist;
 
-import net.minecraft.world.gen.feature.template.RuleTest;
-import net.minecraft.world.gen.feature.template.IRuleTestType;
-import net.minecraft.world.gen.feature.OreFeatureConfig;
-import net.minecraft.world.gen.feature.OreFeature;
+import net.minecraft.world.gen.feature.Features;
 import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.DefaultFlowersFeature;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
+import net.minecraft.world.gen.feature.BlockClusterFeatureConfig;
+import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;
+import net.minecraft.world.gen.blockplacer.SimpleBlockPlacer;
 import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.World;
-import net.minecraft.world.IWorld;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.util.registry.WorldGenRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.RegistryKey;
 import net.minecraft.util.Direction;
-import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.state.StateContainer;
-import net.minecraft.state.BooleanProperty;
+import net.minecraft.potion.Effects;
 import net.minecraft.loot.LootContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
-import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.BlockItem;
-import net.minecraft.fluid.Fluids;
-import net.minecraft.fluid.FluidState;
+import net.minecraft.client.renderer.RenderTypeLookup;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.SoundType;
-import net.minecraft.block.IWaterLoggable;
-import net.minecraft.block.Blocks;
+import net.minecraft.block.FlowerBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Block;
 
@@ -55,101 +56,49 @@ public class BlueberrybushBlock extends FoodModModElements.ModElement {
 	@ObjectHolder("food_mod:blueberrybush")
 	public static final Block block = null;
 	public BlueberrybushBlock(FoodModModElements instance) {
-		super(instance, 20);
+		super(instance, 61);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new CustomBlock());
+		elements.blocks.add(() -> new BlockCustomFlower());
 		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(block.getRegistryName()));
 	}
-	public static class CustomBlock extends Block implements IWaterLoggable {
-		public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-		public CustomBlock() {
-			super(Block.Properties.create(Material.LEAVES).sound(SoundType.GROUND).hardnessAndResistance(1.5f, 10f).setLightLevel(s -> 0)
-					.doesNotBlockMovement());
-			this.setDefaultState(this.stateContainer.getBaseState().with(WATERLOGGED, false));
-			setRegistryName("blueberrybush");
-		}
 
-		@Override
-		public BlockState getStateForPlacement(BlockItemUseContext context) {
-			boolean flag = context.getWorld().getFluidState(context.getPos()).getFluid() == Fluids.WATER;
-			return this.getDefaultState().with(WATERLOGGED, flag);
-		}
-
-		@Override
-		protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
-			builder.add(WATERLOGGED);
-		}
-
-		@Override
-		public FluidState getFluidState(BlockState state) {
-			return state.get(WATERLOGGED) ? Fluids.WATER.getStillFluidState(false) : super.getFluidState(state);
-		}
-
-		@Override
-		public BlockState updatePostPlacement(BlockState state, Direction facing, BlockState facingState, IWorld world, BlockPos currentPos,
-				BlockPos facingPos) {
-			if (state.get(WATERLOGGED)) {
-				world.getPendingFluidTicks().scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickRate(world));
-			}
-			return super.updatePostPlacement(state, facing, facingState, world, currentPos, facingPos);
-		}
-
-		@Override
-		public boolean isReplaceable(BlockState state, BlockItemUseContext context) {
-			return context.getItem().getItem() != this.asItem();
-		}
-
-		@Override
-		public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
-			List<ItemStack> dropsOriginal = super.getDrops(state, builder);
-			if (!dropsOriginal.isEmpty())
-				return dropsOriginal;
-			return Collections.singletonList(new ItemStack(BlueberryItem.block, (int) (3)));
-		}
+	@Override
+	@OnlyIn(Dist.CLIENT)
+	public void clientLoad(FMLClientSetupEvent event) {
+		RenderTypeLookup.setRenderLayer(block, RenderType.getCutout());
 	}
-	private static Feature<OreFeatureConfig> feature = null;
+	private static Feature<BlockClusterFeatureConfig> feature = null;
 	private static ConfiguredFeature<?, ?> configuredFeature = null;
-	private static IRuleTestType<CustomRuleTest> CUSTOM_MATCH = null;
-	private static class CustomRuleTest extends RuleTest {
-		static final CustomRuleTest INSTANCE = new CustomRuleTest();
-		static final com.mojang.serialization.Codec<CustomRuleTest> codec = com.mojang.serialization.Codec.unit(() -> INSTANCE);
-		public boolean test(BlockState blockAt, Random random) {
-			boolean blockCriteria = false;
-			if (blockAt.getBlock() == Blocks.TALL_GRASS.getDefaultState().getBlock())
-				blockCriteria = true;
-			if (blockAt.getBlock() == Blocks.GRASS_BLOCK.getDefaultState().getBlock())
-				blockCriteria = true;
-			return blockCriteria;
-		}
-
-		protected IRuleTestType<?> getType() {
-			return CUSTOM_MATCH;
-		}
-	}
-
 	private static class FeatureRegisterHandler {
 		@SubscribeEvent
 		public void registerFeature(RegistryEvent.Register<Feature<?>> event) {
-			CUSTOM_MATCH = Registry.register(Registry.RULE_TEST, new ResourceLocation("food_mod:blueberrybush_match"), () -> CustomRuleTest.codec);
-			feature = new OreFeature(OreFeatureConfig.CODEC) {
+			feature = new DefaultFlowersFeature(BlockClusterFeatureConfig.field_236587_a_) {
 				@Override
-				public boolean generate(ISeedReader world, ChunkGenerator generator, Random rand, BlockPos pos, OreFeatureConfig config) {
+				public BlockState getFlowerToPlace(Random random, BlockPos bp, BlockClusterFeatureConfig fc) {
+					return block.getDefaultState();
+				}
+
+				@Override
+				public boolean generate(ISeedReader world, ChunkGenerator generator, Random random, BlockPos pos, BlockClusterFeatureConfig config) {
 					RegistryKey<World> dimensionType = world.getWorld().getDimensionKey();
 					boolean dimensionCriteria = false;
 					if (dimensionType == World.OVERWORLD)
 						dimensionCriteria = true;
 					if (!dimensionCriteria)
 						return false;
-					return super.generate(world, generator, rand, pos, config);
+					return super.generate(world, generator, random, pos, config);
 				}
 			};
-			configuredFeature = feature.withConfiguration(new OreFeatureConfig(CustomRuleTest.INSTANCE, block.getDefaultState(), 16)).range(80)
-					.square().func_242731_b(10);
+			configuredFeature = feature
+					.withConfiguration(
+							(new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(block.getDefaultState()), new SimpleBlockPlacer()))
+									.tries(64).build())
+					.withPlacement(Features.Placements.VEGETATION_PLACEMENT).withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT).func_242731_b(5);
 			event.getRegistry().register(feature.setRegistryName("blueberrybush"));
 			Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, new ResourceLocation("food_mod:blueberrybush"), configuredFeature);
 		}
@@ -161,6 +110,36 @@ public class BlueberrybushBlock extends FoodModModElements.ModElement {
 			biomeCriteria = true;
 		if (!biomeCriteria)
 			return;
-		event.getGeneration().getFeatures(GenerationStage.Decoration.UNDERGROUND_ORES).add(() -> configuredFeature);
+		event.getGeneration().getFeatures(GenerationStage.Decoration.VEGETAL_DECORATION).add(() -> configuredFeature);
+	}
+	public static class BlockCustomFlower extends FlowerBlock {
+		public BlockCustomFlower() {
+			super(Effects.SATURATION, 0, Block.Properties.create(Material.PLANTS).doesNotBlockMovement().sound(SoundType.PLANT)
+					.hardnessAndResistance(0f, 0f).setLightLevel(s -> 0));
+			setRegistryName("blueberrybush");
+		}
+
+		@Override
+		public int getFlammability(BlockState state, IBlockReader world, BlockPos pos, Direction face) {
+			return 100;
+		}
+
+		@Override
+		public int getFireSpreadSpeed(BlockState state, IBlockReader world, BlockPos pos, Direction face) {
+			return 60;
+		}
+
+		@Override
+		public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
+			List<ItemStack> dropsOriginal = super.getDrops(state, builder);
+			if (!dropsOriginal.isEmpty())
+				return dropsOriginal;
+			return Collections.singletonList(new ItemStack(BlueberryItem.block, (int) (4)));
+		}
+
+		@Override
+		public PlantType getPlantType(IBlockReader world, BlockPos pos) {
+			return PlantType.PLAINS;
+		}
 	}
 }

@@ -1,12 +1,7 @@
 {
-  "parent": "block/cube",
+  "parent": "block/cross",
   "textures": {
-    "down": "food_mod:blocks/blueberry_texture",
-    "up": "food_mod:blocks/blueberry_texture",
-    "north": "food_mod:blocks/blueberry_texture",
-    "east": "food_mod:blocks/blueberry_texture",
-    "south": "food_mod:blocks/blueberry_texture",
-    "west": "food_mod:blocks/blueberry_texture",
+    "cross": "food_mod:blocks/blueberry_texture",
     "particle": "food_mod:blocks/blueberry_texture"
   }
 }

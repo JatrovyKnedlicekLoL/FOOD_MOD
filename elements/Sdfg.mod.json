@@ -7,13 +7,13 @@
     "cookingTime": 200,
     "recipeRetstackSize": 1,
     "group": "",
-    "recipeShapeless": false,
+    "recipeShapeless": true,
     "recipeSlots": [
       {
         "value": ""
       },
       {
-        "value": ""
+        "value": "CUSTOM:Rohlik"
       },
       {
         "value": ""
@@ -22,7 +22,7 @@
         "value": "CUSTOM:Rohlik"
       },
       {
-        "value": "CUSTOM:Rohlik"
+        "value": ""
       },
       {
         "value": ""

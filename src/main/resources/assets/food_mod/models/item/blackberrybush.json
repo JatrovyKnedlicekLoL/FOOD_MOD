@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "food_mod:blocks/blueberry_texture"
+    "layer0": "food_mod:blocks/blackberry_bush"
   }
 }

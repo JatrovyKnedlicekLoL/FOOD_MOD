@@ -734,82 +734,22 @@
       "registry_name": "rohlikwithblueberryjam"
     },
     {
-      "name": "RohlikwithraspberryjamFoodEaten",
-      "type": "procedure",
-      "sortid": 62,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "rohlikwithraspberryjam_food_eaten",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "Rohlikwithraspberryjam",
-      "type": "food",
-      "sortid": 62,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "rohlikwithraspberryjam"
-    },
-    {
-      "name": "RohlikwithblackberryjamFoodEaten",
-      "type": "procedure",
+      "name": "Blackberrybush",
+      "type": "plant",
       "sortid": 63,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "rohlikwithblackberryjam_food_eaten",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
+      "registry_name": "blackberrybush"
     },
     {
-      "name": "Rohlikwithblackberryjam",
-      "type": "food",
-      "sortid": 63,
+      "name": "Strawberrybush",
+      "type": "plant",
+      "sortid": 62,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "rohlikwithblackberryjam"
-    },
-    {
-      "name": "RohlikwithstrawberryjamFoodEaten",
-      "type": "procedure",
-      "sortid": 64,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "rohlikwithstrawberryjam_food_eaten",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "Rohlikwithstrawberryjam",
-      "type": "food",
-      "sortid": 64,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "rohlikwithstrawberryjam"
+      "registry_name": "strawberrybush"
     }
   ],
   "variable_elements": [],
