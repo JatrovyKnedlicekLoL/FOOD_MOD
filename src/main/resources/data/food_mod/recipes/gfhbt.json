@@ -1,20 +1,17 @@
 {
   "group": "food_mod",
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "012"
-  ],
-  "key": {
-    "0": {
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
       "item": "food_mod:flour"
     },
-    "1": {
+    {
       "item": "food_mod:flour"
     },
-    "2": {
+    {
       "item": "food_mod:flour"
     }
-  },
+  ],
   "result": {
     "item": "minecraft:bread",
     "count": 1

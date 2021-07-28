@@ -72,15 +72,11 @@ public class OpickaEntity extends FoodModModElements.ModElement {
 	@SubscribeEvent
 	public void addFeatureToBiomes(BiomeLoadingEvent event) {
 		boolean biomeCriteria = false;
-		if (new ResourceLocation("jungle").equals(event.getName()))
-			biomeCriteria = true;
-		if (new ResourceLocation("jungle_hills").equals(event.getName()))
-			biomeCriteria = true;
-		if (new ResourceLocation("jungle_edge").equals(event.getName()))
+		if (new ResourceLocation("food_mod:bananabiom").equals(event.getName()))
 			biomeCriteria = true;
 		if (!biomeCriteria)
 			return;
-		event.getSpawns().getSpawner(EntityClassification.CREATURE).add(new MobSpawnInfo.Spawners(entity, 20, 4, 4));
+		event.getSpawns().getSpawner(EntityClassification.CREATURE).add(new MobSpawnInfo.Spawners(entity, 8, 4, 4));
 	}
 
 	@Override

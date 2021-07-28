@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "food_mod:blocks/pearleave",
+    "up": "food_mod:blocks/pearleave",
+    "north": "food_mod:blocks/pearleave",
+    "east": "food_mod:blocks/pearleave",
+    "south": "food_mod:blocks/pearleave",
+    "west": "food_mod:blocks/pearleave",
+    "particle": "food_mod:blocks/pearleave"
+  }
+}

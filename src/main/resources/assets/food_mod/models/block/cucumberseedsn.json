@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "food_mod:blocks/vgguvc",
+    "particle": "food_mod:blocks/vgguvc"
+  }
+}

@@ -48,7 +48,8 @@ public class ZakaznikEntity extends FoodModModElements.ModElement {
 	@Override
 	public void initElements() {
 		elements.entities.add(() -> entity);
-		elements.items.add(() -> new SpawnEggItem(entity, -1, -1, new Item.Properties().group(ItemGroup.MISC)).setRegistryName("zakaznik_spawn_egg"));
+		elements.items.add(() -> new SpawnEggItem(entity, -13421569, -10027009, new Item.Properties().group(ItemGroup.MISC))
+				.setRegistryName("zakaznik_spawn_egg"));
 	}
 
 	@Override

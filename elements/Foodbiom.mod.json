@@ -7,7 +7,7 @@
       "value": "Blocks.GRASS"
     },
     "undergroundBlock": {
-      "value": "Blocks.DIRT#0"
+      "value": "Blocks.STONE#0"
     },
     "airColor": {
       "value": -13382401,
@@ -73,10 +73,10 @@
       "value": "Blocks.LOG#0"
     },
     "treeBranch": {
-      "value": "Blocks.LEAVES#0"
+      "value": "CUSTOM:Pearleaves"
     },
     "treeVines": {
-      "value": "Blocks.LEAVES#0"
+      "value": "Blocks.LEAVES"
     },
     "treeFruits": {
       "value": ""
